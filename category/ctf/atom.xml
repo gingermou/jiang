@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>小姜天堂 • Posts by &#34;ctf&#34; category</title>
+    <link href="http://example.com" />
+    <updated>2020-09-09T10:56:49.000Z</updated>
+    <entry>
+        <id>http://example.com/2020/09/09/%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%B8%97%E9%80%8F%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E5%BE%A1/</id>
+        <title>文件上传渗透攻击及防御</title>
+        <link rel="alternate" href="http://example.com/2020/09/09/%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%B8%97%E9%80%8F%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E5%BE%A1/"/>
+        <content type="html"></content>
+        <updated>2020-09-09T10:56:49.000Z</updated>
+    </entry>
+</feed>

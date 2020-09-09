@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>小姜天堂 • Posts by &#34;web&#34; category</title>
+    <link href="http://example.com" />
+    <updated>2020-09-09T11:42:13.000Z</updated>
+    <entry>
+        <id>http://example.com/2020/09/09/Web/WarmUp/</id>
+        <title>WarmUp</title>
+        <link rel="alternate" href="http://example.com/2020/09/09/Web/WarmUp/"/>
+        <content type="html"></content>
+        <updated>2020-09-09T11:42:13.000Z</updated>
+    </entry>
+</feed>

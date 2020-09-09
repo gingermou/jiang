@@ -1,0 +1,16 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "小姜天堂 • All posts by \"web\" category",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2020/09/09/Web/WarmUp/",
+            "url": "http://example.com/2020/09/09/Web/WarmUp/",
+            "title": "WarmUp",
+            "date_published": "2020-09-09T11:42:13.000Z",
+            "content_html": "",
+            "tags": []
+        }
+    ]
+}
