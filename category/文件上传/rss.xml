@@ -1,14 +1,18 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
-    <title>小姜天堂 • Posts by &#34;upload&#34; category</title>
-    <link href="http://example.com" />
-    <updated>2020-09-09T10:56:49.000Z</updated>
-    <entry>
-        <id>http://example.com/2020/09/09/%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%B8%97%E9%80%8F%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E5%BE%A1/</id>
-        <title>文件上传渗透攻击及防御</title>
-        <link rel="alternate" href="http://example.com/2020/09/09/%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%B8%97%E9%80%8F%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E5%BE%A1/"/>
-        <content type="html">&lt;h2 id=&#34;文件上传漏洞原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件上传漏洞原理&#34;&gt;#&lt;/a&gt; 文件上传漏洞原理&lt;/h2&gt;
+<rss version="2.0">
+    <channel>
+        <title>小姜天堂 • Posts by &#34;文件上传&#34; category</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 09 Sep 2020 18:56:49 +0800</pubDate>
+        <lastBuildDate>Wed, 09 Sep 2020 18:56:49 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2020/09/09/%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%B8%97%E9%80%8F%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E5%BE%A1/</guid>
+            <title>文件上传渗透攻击及防御</title>
+            <link>http://example.com/2020/09/09/%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%B8%97%E9%80%8F%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E5%BE%A1/</link>
+            <pubDate>Wed, 09 Sep 2020 18:56:49 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;文件上传漏洞原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件上传漏洞原理&#34;&gt;#&lt;/a&gt; 文件上传漏洞原理&lt;/h2&gt;
 &lt;h4 id=&#34;实验环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实验环境&#34;&gt;#&lt;/a&gt; 实验环境：&lt;/h4&gt;
 &lt;p&gt;目标靶机：OWASP_Broken_Web_Apps_VM_1.2&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zb3VyY2Vmb3JnZS5uZXQvcHJvamVjdHMvb3dhc3Bid2EvZmlsZXMvMS4yL09XQVNQX0Jyb2tlbl9XZWJfQXBwc19WTV8xLjIuN3ovZG93bmxvYWQ=&#34;&gt;https://sourceforge.net/projects/owaspbwa/files/1.2/OWASP_Broken_Web_Apps_VM_1.2.7z/download&lt;/span&gt;&lt;/p&gt;
@@ -51,7 +55,7 @@
 &lt;p&gt;即可完成绕过&lt;/p&gt;
 &lt;p&gt;运用冰蝎连接 shell.php 获得 shell&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://raw.githubusercontent.com/gingermou/jiang/images/Typora/img/image-20200910102628120.png&#34; alt=&#34;image-20200910102628120&#34; /&gt;&lt;/p&gt;
-</content>
-        <updated>2020-09-09T10:56:49.000Z</updated>
-    </entry>
-</feed>
+ ]]></description>
+        </item>
+    </channel>
+</rss>
