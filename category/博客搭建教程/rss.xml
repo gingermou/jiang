@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>小姜天堂 • Posts by &#34;博客搭建教程&#34; category</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 23 Jun 2021 16:26:21 +0800</pubDate>
+        <lastBuildDate>Wed, 23 Jun 2021 16:26:21 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/06/23/%E6%8E%A8%E8%8D%90/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</guid>
+            <title>博客搭建教程</title>
+            <link>http://example.com/2021/06/23/%E6%8E%A8%E8%8D%90/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</link>
+            <pubDate>Wed, 23 Jun 2021 16:26:21 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h1&gt;
+&lt;p&gt;体验更加排版请访问原文链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2Jsb2cubGl1eGlhbmFuLmNvbS9idWlsZC1ibG9nLXdlYnNpdGUtYnktaGV4by1naXRodWIuaHRtbA==&#34;&gt;http://blog.liuxianan.com/build-blog-website-by-hexo-github.html&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;使用 github pages 服务搭建博客的好处有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;全是静态文件，访问速度快；&lt;/li&gt;
+&lt;li&gt;免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；&lt;/li&gt;
+&lt;li&gt;可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于 github 的；&lt;/li&gt;
+&lt;li&gt;数据绝对安全，基于 github 的版本管理，想恢复到哪个历史版本都行；&lt;/li&gt;
+&lt;li&gt;博客内容可以轻松打包、转移、发布到其它平台；&lt;/li&gt;
+&lt;li&gt;等等&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;11-准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-准备工作&#34;&gt;#&lt;/a&gt; 1.1. 准备工作&lt;/h2&gt;
+&lt;p&gt;在开始一切之前，你必须已经：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;有一个 github 账号，没有的话去注册一个；&lt;/li&gt;
+&lt;li&gt;安装了 node.js、npm，并了解相关基础知识；&lt;/li&gt;
+&lt;li&gt;安装了 git for windows（或者其它 git 客户端）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本文所使用的环境：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Windows8.1&lt;/li&gt;
+&lt;li&gt;node.js@5.5.0&lt;/li&gt;
+&lt;li&gt;git@1.9.2&lt;/li&gt;
+&lt;li&gt;hexo@3.2.2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;搭建github博客&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#搭建github博客&#34;&gt;#&lt;/a&gt; 搭建 github 博客&lt;/h1&gt;
+&lt;h2 id=&#34;21-创建仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#21-创建仓库&#34;&gt;#&lt;/a&gt; 2.1. 创建仓库&lt;/h2&gt;
+&lt;p&gt;新建一个名为 &lt;code&gt;你的用户名.github.io&lt;/code&gt;  的仓库，比如说，如果你的 github 用户名是 test，那么你就新建 &lt;code&gt;test.github.io&lt;/code&gt;  的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3Rlc3QuZ2l0aHViLmlvLw==&#34;&gt;http://test.github.io&lt;/span&gt; 了，是不是很方便？&lt;/p&gt;
+&lt;p&gt;由此可见，每一个 github 账户最多只能创建一个这样可以直接使用域名访问的仓库。&lt;/p&gt;
+&lt;p&gt;几个注意的地方：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;注册的邮箱一定要验证，否则不会成功；&lt;/li&gt;
+&lt;li&gt;仓库名字必须是： &lt;code&gt;username.github.io&lt;/code&gt; ，其中 &lt;code&gt;username&lt;/code&gt;  是你的用户名；&lt;/li&gt;
+&lt;li&gt;仓库创建成功不会立即生效，需要过一段时间，大概 10-30 分钟，或者更久，我的等了半个小时才生效；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。&lt;/p&gt;
+&lt;h2 id=&#34;22-绑定域名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#22-绑定域名&#34;&gt;#&lt;/a&gt; 2.2. 绑定域名&lt;/h2&gt;
+&lt;p&gt;当然，你不绑定域名肯定也是可以的，就用默认的  &lt;code&gt;xxx.github.io&lt;/code&gt;  来访问，如果你想更个性一点，想拥有一个属于自己的域名，那也是 OK 的。&lt;/p&gt;
+&lt;p&gt;首先你要注册一个域名，域名注册以前总是推荐去 &lt;code&gt;godaddy&lt;/code&gt; ，现在觉得其实国内的阿里云也挺不错的，价格也不贵，毕竟是大公司，放心！&lt;/p&gt;
+&lt;p&gt;绑定域名分 2 种情况：带 www 和不带 www 的。&lt;/p&gt;
+&lt;p&gt;域名配置最常见有 2 种方式，CNAME 和 A 记录，CNAME 填写域名，A 记录填写 IP，由于不带 www 方式只能采用 A 记录，所以必须先 ping 一下 &lt;code&gt;你的用户名.github.io&lt;/code&gt;  的 IP，然后到你的域名 DNS 设置页，将 A 记录指向你 ping 出来的 IP，将 CNAME 指向 &lt;code&gt;你的用户名.github.io&lt;/code&gt; ，这样可以保证无论是否添加 www 都可以访问，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160823_191336_238_8683.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;然后到你的 github 项目根目录新建一个名为 CNAME 的文件（无后缀），里面填写你的域名，加不加 www 看你自己喜好，因为经测试：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果你填写的是没有 www 的，比如 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL215Z2l0Lm1l&#34;&gt;mygit.me&lt;/span&gt;，那么无论是访问 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5teWdpdC5tZS8=&#34;&gt;http://www.mygit.me&lt;/span&gt; 还是 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL215Z2l0Lm1lLw==&#34;&gt;http://mygit.me&lt;/span&gt; ，都会自动跳转到 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL215Z2l0Lm1lLw==&#34;&gt;http://mygit.me&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;如果你填写的是带 www 的，比如 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5teWdpdC5tZQ==&#34;&gt;www.mygit.me&lt;/span&gt; ，那么无论是访问 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5teWdpdC5tZS8=&#34;&gt;http://www.mygit.me&lt;/span&gt; 还是 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL215Z2l0Lm1lLw==&#34;&gt;http://mygit.me&lt;/span&gt; ，都会自动跳转到 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5teWdpdC5tZS8=&#34;&gt;http://www.mygit.me&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;如果你填写的是其它子域名，比如 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2FiYy5teWdpdC5tZQ==&#34;&gt;abc.mygit.me&lt;/span&gt;，那么访问 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2FiYy5teWdpdC5tZS8=&#34;&gt;http://abc.mygit.me&lt;/span&gt; 没问题，但是访问 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL215Z2l0Lm1lLw==&#34;&gt;http://mygit.me&lt;/span&gt; ，不会自动跳转到 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2FiYy5teWdpdC5tZS8=&#34;&gt;http://abc.mygit.me&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;另外说一句，在你绑定了新域名之后，原来的 &lt;code&gt;你的用户名.github.io&lt;/code&gt;  并没有失效，而是会自动跳转到你的新域名。&lt;/p&gt;
+&lt;h1 id=&#34;配置ssh-key&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置ssh-key&#34;&gt;#&lt;/a&gt; 配置 SSH key&lt;/h1&gt;
+&lt;p&gt;为什么要配置这个呢？因为你提交代码肯定要拥有你的 github 权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用 ssh key 来解决本地和服务器的连接问题。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ~/. &lt;span class=&#34;token function&#34;&gt;ssh&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#检查本机已存在的 ssh 密钥&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;如果提示：No such file or directory 说明你是第一次使用 git。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;邮件地址&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后连续 3 次回车，最终会生成一个文件在用户目录下，打开用户目录，找到 &lt;code&gt;.ssh\id_rsa.pub&lt;/code&gt;  文件，记事本打开并复制里面的内容，打开你的 github 主页，进入个人设置 -&amp;gt; SSH and GPG keys -&amp;gt; New SSH key：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160818_143914_495_9084.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;将刚复制的内容粘贴到 key 那里，title 随便填，保存。&lt;/p&gt;
+&lt;h2 id=&#34;31-测试是否成功&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#31-测试是否成功&#34;&gt;#&lt;/a&gt; 3.1. 测试是否成功&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ ssh -T git@github.com # 注意邮箱地址不用改
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果提示 &lt;code&gt;Are you sure you want to continue connecting (yes/no)?&lt;/code&gt; ，输入 yes，然后会看到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi liuxianan! You&#39;ve successfully authenticated, but GitHub does not provide shell access.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看到这个信息说明 SSH 已配置成功！&lt;/p&gt;
+&lt;p&gt;此时你还需要配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;liuxianan&amp;quot;// 你的github用户名，非昵称
+$ git config --global user.email  &amp;quot;xxx@qq.com&amp;quot;// 填写你的github注册邮箱
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;具体这个配置是干嘛的我没仔细深究。&lt;/p&gt;
+&lt;h1 id=&#34;使用hexo写博客&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用hexo写博客&#34;&gt;#&lt;/a&gt; 使用 hexo 写博客&lt;/h1&gt;
+&lt;h2 id=&#34;41-hexo简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#41-hexo简介&#34;&gt;#&lt;/a&gt; 4.1. hexo 简介&lt;/h2&gt;
+&lt;p&gt;Hexo 是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持 Markdown 格式，有众多优秀插件和主题。&lt;/p&gt;
+&lt;p&gt;官网： &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2hleG8uaW8v&#34;&gt;http://hexo.io&lt;/span&gt;&lt;br /&gt;
+github: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhv&#34;&gt;https://github.com/hexojs/hexo&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;42-原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#42-原理&#34;&gt;#&lt;/a&gt; 4.2. 原理&lt;/h2&gt;
+&lt;p&gt;由于 github pages 存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，所以 hexo 所做的就是将这些 md 文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到 github。&lt;/p&gt;
+&lt;h2 id=&#34;43-注意事项&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#43-注意事项&#34;&gt;#&lt;/a&gt; 4.3. 注意事项&lt;/h2&gt;
+&lt;p&gt;安装之前先来说几个注意事项：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;很多命令既可以用 Windows 的 cmd 来完成，也可以使用 git bash 来完成，但是部分命令会有一些问题，为避免不必要的问题，建议全部使用 git bash 来执行；&lt;/li&gt;
+&lt;li&gt;hexo 不同版本差别比较大，网上很多文章的配置信息都是基于 2.x 的，所以注意不要被误导；&lt;/li&gt;
+&lt;li&gt;hexo 有 2 种 &lt;code&gt;_config.yml&lt;/code&gt;  文件，一个是根目录下的全局的 &lt;code&gt;_config.yml&lt;/code&gt; ，一个是各个 &lt;code&gt;theme&lt;/code&gt;  下的；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;44-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#44-安装&#34;&gt;#&lt;/a&gt; 4.4. 安装&lt;/h2&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; -g hexo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;45-初始化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#45-初始化&#34;&gt;#&lt;/a&gt; 4.5. 初始化&lt;/h2&gt;
+&lt;p&gt;在电脑的某个地方新建一个名为 hexo 的文件夹（名字可以随便取），比如我的是 &lt;code&gt;F:\Workspaces\hexo&lt;/code&gt; ，由于这个文件夹将来就作为你存放代码的地方，所以最好不要随便放。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /f/Workspaces/hexo/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo init&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;hexo 会自动下载一些文件到这个目录，包括 node_modules，目录结构如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160818_115922_773_1148.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo g &lt;span class=&#34;token comment&#34;&gt;# 生成&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo s &lt;span class=&#34;token comment&#34;&gt;# 启动服务&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;执行以上命令之后，hexo 就会在 public 文件夹生成相关 html 文件，这些文件将来都是要提交到 github 去的：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160818_120700_028_2426.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hexo s&lt;/code&gt;  是开启本地预览服务，打开浏览器访问 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2xvY2FsaG9zdDo0MDAwLw==&#34;&gt;http://localhost:4000&lt;/span&gt; 即可看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故，因为 4000 这个端口太常见了，解决端口冲突问题请参考这篇文章：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2Jsb2cubGl1eGlhbmFuLmNvbS93aW5kb3dzLXBvcnQtYmluZC5odG1s&#34;&gt;http://blog.liuxianan.com/windows-port-bind.html&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;第一次初始化的时候 hexo 已经帮我们写了一篇名为 Hello World 的文章，默认的主题比较丑，打开时就是这个样子：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160818_132443_202_6848.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;46-修改主题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#46-修改主题&#34;&gt;#&lt;/a&gt; 4.6. 修改主题&lt;/h2&gt;
+&lt;p&gt;既然默认主题很丑，那我们别的不做，首先来替换一个好看点的主题。这是 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=&#34;&gt;官方主题&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;个人比较喜欢的 2 个主题：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3Bpbmdnb2QvaGV4by10aGVtZS1qZWt5bGw=&#34;&gt;hexo-theme-jekyll&lt;/span&gt; 和 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2xpdHRlbi9oZXhvLXRoZW1lLXlpbGlh&#34;&gt;hexo-theme-yilia&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;首先下载这个主题：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /f/Workspaces/hexo/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; clone https://github.com/litten/hexo-theme-yilia.git themes/yilia&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;下载后的主题都在这里：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160818_134500_245_0912.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;修改 &lt;code&gt;_config.yml&lt;/code&gt;  中的 &lt;code&gt;theme: landscape&lt;/code&gt;  改为 &lt;code&gt;theme: yilia&lt;/code&gt; ，然后重新执行 &lt;code&gt;hexo g&lt;/code&gt;  来重新生成。&lt;/p&gt;
+&lt;p&gt;如果出现一些莫名其妙的问题，可以先执行 &lt;code&gt;hexo clean&lt;/code&gt;  来清理一下 public 的内容，然后再来重新生成和发布。&lt;/p&gt;
+&lt;h2 id=&#34;47-上传之前&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#47-上传之前&#34;&gt;#&lt;/a&gt; 4.7. 上传之前&lt;/h2&gt;
+&lt;p&gt;在上传代码到 github 之前，一定要记得先把你以前所有代码下载下来（虽然 github 有版本管理，但备份一下总是好的），因为从 hexo 提交代码时会把你以前的所有代码都删掉。&lt;/p&gt;
+&lt;h2 id=&#34;48-上传到github&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#48-上传到github&#34;&gt;#&lt;/a&gt; 4.8. 上传到 github&lt;/h2&gt;
+&lt;p&gt;如果你一切都配置好了，发布上传很容易，一句 &lt;code&gt;hexo d&lt;/code&gt;  就搞定，当然关键还是你要把所有东西配置好。&lt;/p&gt;
+&lt;p&gt;首先， &lt;code&gt;ssh key&lt;/code&gt;  肯定要配置好。&lt;/p&gt;
+&lt;p&gt;其次，配置 &lt;code&gt;_config.yml&lt;/code&gt;  中有关 deploy 的部分：&lt;/p&gt;
+&lt;p&gt;正确写法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deploy:  type: git  repository: git@github.com:liuxianan/liuxianan.github.io.git  branch: master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;错误写法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deploy:  type: github  repository: https://github.com/liuxianan/liuxianan.github.io.git  branch: master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;后面一种写法是 hexo2.x 的写法，现在已经不行了，无论是哪种写法，此时直接执行 &lt;code&gt;hexo d&lt;/code&gt;  的话一般会报如下错误：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Deployer not found: github 或者 Deployer not found: git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;原因是还需要安装一个插件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install hexo-deployer-git --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其它命令不确定，部署这个命令一定要用 git bash，否则会提示 &lt;code&gt;Permission denied (publickey).&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打开你的 git bash，输入 &lt;code&gt;hexo d&lt;/code&gt;  就会将本次有改动的代码全部提交，没有改动的不会：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160818_140441_769_5024.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;49-保留cname-readmemd等文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#49-保留cname-readmemd等文件&#34;&gt;#&lt;/a&gt; 4.9. 保留 CNAME、README.md 等文件&lt;/h2&gt;
+&lt;p&gt;提交之后网页上一看，发现以前其它代码都没了，此时不要慌，一些非 md 文件可以把他们放到 source 文件夹下，这里的所有文件都会原样复制（除了 md 文件）到 public 目录的：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160818_141037_580_8035.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;由于 hexo 默认会把所有 md 文件都转换成 html，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1SRUFETUUtOXk0anM0NmgubWQ=&#34;&gt;包括 README.md&lt;/span&gt;，所有需要每次生成之后、上传之前，手动将 README.md 复制到 public 目录，并删除 README.html。&lt;/p&gt;
+&lt;h2 id=&#34;410-常用hexo命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#410-常用hexo命令&#34;&gt;#&lt;/a&gt; 4.10. 常用 hexo 命令&lt;/h2&gt;
+&lt;p&gt;常见命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo new &amp;quot;postName&amp;quot; #新建文章hexo new page &amp;quot;pageName&amp;quot; #新建页面hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）hexo deploy #部署到GitHubhexo help  # 查看帮助hexo version  #查看Hexo的版本
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;缩写：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;组合命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo s -g #生成并本地预览hexo d -g #生成并上传
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;411-_configyml&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#411-_configyml&#34;&gt;#&lt;/a&gt; 4.11. _config.yml&lt;/h2&gt;
+&lt;p&gt;这里面都是一些全局配置，每个参数的意思都比较简单明了，所以就不作详细介绍了。&lt;/p&gt;
+&lt;p&gt;需要特别注意的地方是，冒号后面必须有一个空格，否则可能会出问题。&lt;/p&gt;
+&lt;h2 id=&#34;412-写博客&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#412-写博客&#34;&gt;#&lt;/a&gt; 4.12. 写博客&lt;/h2&gt;
+&lt;p&gt;定位到我们的 hexo 根目录，执行命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo new &#39;my-first-blog&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;hexo 会帮我们在 &lt;code&gt;_posts&lt;/code&gt;  下生成相关 md 文件：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160823_183047_352_1475.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我们只需要打开这个文件就可以开始写博客了，默认生成如下内容：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160823_183325_470_9306.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;当然你也可以直接自己新建 md 文件，用这个命令的好处是帮我们自动生成了时间。&lt;/p&gt;
+&lt;p&gt;一般完整格式如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;---title: postName #文章页面上的显示名称，一般是中文date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改categories: 默认分类 #分类tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面---以下是正文&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;那么 &lt;code&gt;hexo new page &#39;postName&#39;&lt;/code&gt;  命令和 &lt;code&gt;hexo new &#39;postName&#39;&lt;/code&gt;  有什么区别呢？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo new page &amp;quot;my-second-blog&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成如下：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160823_184852_854_6502.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;最终部署时生成： &lt;code&gt;hexo\public\my-second-blog\index.html&lt;/code&gt; ，但是它不会作为文章出现在博文目录。&lt;/p&gt;
+&lt;h3 id=&#34;4121-写博客工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4121-写博客工具&#34;&gt;#&lt;/a&gt; 4.12.1. 写博客工具&lt;/h3&gt;
+&lt;p&gt;那么用什么工具写博客呢？这个我还没去找，以前自己使用 editor.md 简单弄了个，大家有好用的 hexo 写博客工具可以推荐个。&lt;/p&gt;
+&lt;h3 id=&#34;4122-如何让博文列表不显示全部内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4122-如何让博文列表不显示全部内容&#34;&gt;#&lt;/a&gt; 4.12.2. 如何让博文列表不显示全部内容&lt;/h3&gt;
+&lt;p&gt;默认情况下，生成的博文目录会显示全部的文章内容，如何设置文章摘要的长度呢？&lt;/p&gt;
+&lt;p&gt;答案是在合适的位置加上 `` 即可，例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token title important&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;#&lt;/span&gt; 前言使用github pages服务搭建博客的好处有：1. 全是静态文件，访问速度快；2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!--more--&gt;&lt;/span&gt;&lt;span class=&#34;token list punctuation&#34;&gt;4.&lt;/span&gt; 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；5. 博客内容可以轻松打包、转移、发布到其它平台；6. 等等；&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;最终效果：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.liuxianan.com/201608/20160823_184633_653_1893.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;最终效果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#最终效果&#34;&gt;#&lt;/a&gt; 最终效果&lt;/h1&gt;
+&lt;p&gt;可以访问我的 git 博客来查看效果： [&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dpbmdlcm1vdS50b3A=&#34;&gt;http://gingermou.top&lt;/span&gt;]&lt;/p&gt;
+&lt;p&gt;不过呢，其实这个博客我只是拿来玩一玩的，没打算真的把它当博客，因为我已经有一个自己的博客了，哈哈！正因如此，本文仅限入门学习，关于 hexo 搭建个人博客的更高级玩法大家可以另找教程。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
